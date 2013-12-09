@@ -1,0 +1,31 @@
+!!!
+html
+  head
+    title= "Real time web chat"
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.min.css')
+    script(src='/chat.js')
+    script(src='/socket.io/socket.io.js')
+  body
+    .container.row.row-fluid.center-block
+      .header.text-center
+        h1 CHAT CLIENT
+      .col-md-6.col-md-offset-3
+        .row.row-fluid
+          #content.col-md-12(style='height: 300px; border: solid 1px #999; overflow-y: scroll;')
+        form.form-inline.row(role='form')
+          br
+          fieldset.row.row-fluid#name-field
+            .form-group.col-md-10
+              label.sr-only Name: 
+              input.form-control#name(placeholder='Name')
+            .for-group.col-md-2
+              button.btn.btn-default#set-name(type='button') SET
+
+        form.row.row-fluid(role='form')
+          br
+          fieldset#message-fields(disabled)
+            label.sr-only Message:
+            input.form-control#field(placeholder='Message')
+            br
+            button.form-control.btn.btn-primary#send(type='button') SEND
